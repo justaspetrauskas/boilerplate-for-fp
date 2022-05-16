@@ -16,7 +16,10 @@
     "lint": "yarn workspaces run lint",
     "format:check": "yarn prettier --list-different",
     "validate": "yarn format:check && yarn lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "client": "yarn --cwd client ~/packages/client/ start",
+    "server": "yarn --cwd server ~/packages/server/ dev",
+    "run-everything": "concurrently \"yarn client\" \"yarn server\""
   },
   "devDependencies": {
     "husky": "^7.0.4",
